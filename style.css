@@ -1,13 +1,15 @@
 /*
    Theme Name: Melville (Facing The Singularity Edition)
-   Theme URI: http://madebyraygun.com/labs/melville
+   Theme URI: https://github.com/dbaupp/melville-facing-the-singularity-edition
    Description: A clean journal theme with great typography (with modifications for facingthesingularity.com)
    Version: 1.0.2
-   Author: Dalton Rooney
-   Author URI: http://madebyraygun.com
+   Author: Huon Wilson
+   Author URI: http://dbaupp.github.com/
    Tags: clean, basic, typography, minimalist, white, single column
 
-   Based on TwentyTen, the default WordPress theme
+   This is based on Melville (http://madebyraygun.com/wordpress/themes/melville/).
+
+   Melville is based on TwentyTen, the default WordPress theme
    */
 
 /* @group Google Font Loader */
@@ -29,7 +31,7 @@ html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, labe
 table { border-collapse:collapse; border-spacing:0 }
 fieldset, img { border:0 }
 address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal }
-ul li { list-style:none }
+ul li { list-style: circle outside none; }
 caption, th { text-align:left }
 h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal }
 q:before, q:after { content:''}
@@ -82,14 +84,17 @@ h1, h2, h3, h4, h5, h6 { 		font-weight:normal; 		margin: 15px 0;
 }
 
 #content h2 {
+    margin-top: 40px;
     font-size: 1.4em;
 }
 
 #content h3 {
+    margin-top: 40px;
     font-size: 1.2em;
 }
 
 #content h4 {
+    margin-top: 20px;
     font-size: 1em;
 }
 
@@ -114,7 +119,6 @@ blockquote {
     margin: 0px;
     padding: 0 0 0 30px;
     border-left: 1px solid #eee;
-    font-style: italic;
 }
 
 cite {
@@ -168,7 +172,7 @@ span.dropcap{
 }
 
 #content ul, #content ol {
-    margin: 0px 0 15px;
+    margin: 0px 0 20px;
 }
 
 #content li {
@@ -225,6 +229,12 @@ span.dropcap{
 
 div#content {
     margin: 0 80px 20px 80px;
+    text-align: justify;
+    
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
 
 #content div.post p.next-chapter {

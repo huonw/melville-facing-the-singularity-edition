@@ -12,15 +12,10 @@ get_header(); ?>
 						<?php the_content(); ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
 				
-				<p class="next-chapter"><?php next_post_link('%link','Next chapter &rarr;'); ?></p>
-
-				<?php if (FALSE) : /* dont show any of this next stuff */ ?>
-				<p class="date"><?php twentyten_posted_on(); ?></p>
-				<p class="post-meta"><?php twentyten_posted_in();?>
-
-				<?php comments_template( '', true ); ?>
-				<?php endif; ?>
-
+				<p class="next-chapter"><?php next_post_link('%link','Next chapter &rarr;',TRUE); ?></p>
+				
+				<?php edit_post_link('Edit', '<p>', '</p>'); ?>
+				
 <?php endwhile; // end of the loop. ?>
 </div>
 <?php get_footer(); ?>

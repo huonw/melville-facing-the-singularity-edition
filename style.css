@@ -157,7 +157,7 @@ hr {
 }
 
 #content div.post {
-    margin: 0 0 70px 0;
+    margin: 0 0 0 0;
 }
 
 span.dropcap{
@@ -227,7 +227,7 @@ span.dropcap{
 }
 
 div#content {
-    margin: 0 80px 20px 80px;
+    margin: 0 80px 50px 80px;
     text-align: justify;
     
     -moz-hyphens: auto;

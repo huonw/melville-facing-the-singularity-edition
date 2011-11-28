@@ -63,8 +63,7 @@ div#wrapper {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -40px;
-    padding-top: 20px;
+    margin: 0 auto -110px;
     border-right: 1px solid #cccccc;
     border-left: 1px solid #cccccc;
     moz-box-shadow: 1px 0 20px #dddddd;
@@ -330,7 +329,7 @@ br.clear { clear:both; display:block; height:1px; margin:-1px 0 0 0 } /* Use thi
 /* @group Header */
 
 div#header {
-    margin: 0 0 30px 0;
+    margin: 20px 0 30px 0;
     text-align:center;
     color: #777777;
 }
@@ -616,7 +615,12 @@ p.form-allowed-tags {
 
 /* @group Footer */
 
-.push, #footer {
+.push {
+    height: 110px;
+    clear: both;
+}
+
+ #footer {
     height: 40px;
     clear: both;
 }

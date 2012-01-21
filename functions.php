@@ -269,6 +269,16 @@ add_option("melville_theme_footer", 'show');
 $melville_footer = get_option('melville_theme_footer'); 
 define('melville_footer',$melville_footer);
 
+$max_contents_parts = 5;
+$NUMBERS = array("Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten");
+foreach ($NUMBERS as $i => $n) {
+  define("NUMBERS_$i", $n);
+}
+define('max_contents_parts', $max_contents_parts);
+for ($i=1; $i <= $max_contents_parts; $i++) {
+  add_option("contents_part_${i}_start", '');
+  add_option("contents_part_${i}_title", '');
+}
 
 // create the admin menu
 
@@ -279,7 +289,7 @@ add_action('admin_menu', 'add_melville_theme_option_page');
 
 function add_melville_theme_option_page() {
 // hook in the options page function
-add_theme_page('Melville Theme Options', 'Melville Theme Options', 'manage_options', __FILE__, 'melville_theme_options_page');
+add_theme_page('Melville (FTS Ed.) Theme Options', 'Melville (FTS Ed.) Theme Options', 'manage_options', __FILE__, 'melville_theme_options_page');
 }
 
 function melville_theme_options_page() { ?>
@@ -296,10 +306,22 @@ function melville_theme_options_page() { ?>
 	<option value="hide" <?php if(melville_footer == hide) echo " selected='selected'";?>>False</option>
 </select>
 </td>
-</tr>	
+</tr>
+
+<tr>
+<td><b>Contents Page Parts</b></td><td>Starting Post # <small>(Empty/non-integers are ignored)</small></td><td>Title</td>
+</tr>
+<?php for ($i=1; $i <= max_contents_parts; $i++) : ?>
+<tr>
+   <th scope="row">Part <?php echo $i;?></th>
+   <td><input type="number" <?php echo "name='contents_part_${i}_start' value='".get_option("contents_part_${i}_start")."'";?> /></td>
+															       <td><input type="text" <?php echo "name='contents_part_${i}_title' value='".get_option("contents_part_${i}_title")."'"; ?> /></td>
+</tr>
+<?php endfor; ?>
+
 </table>
 
-<input type="hidden" name="page_options" value="melville_theme_footer" />
+    <input type="hidden" name="page_options" value="melville_theme_footer,<?php for ($i=1; $i <= max_contents_parts; $i++) {echo "contents_part_${i}_start,contents_part_${i}_title"; if ($i != max_contents_parts) {echo ',';}}?>" />
 <input type="hidden" name="action" value="update" />	
 <p class="submit">
 <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />

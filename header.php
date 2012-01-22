@@ -54,7 +54,6 @@
 	?></title>
 
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
 
 <?php wp_head();?>
 </head>
@@ -75,5 +74,5 @@
 
 		<img id="header-dinkus" src="<?php bloginfo('stylesheet_directory') ?>/images/dinkus.png" />
 	</div><!--#header-->
-	
-<div id="content">	
+
+<div id="content">

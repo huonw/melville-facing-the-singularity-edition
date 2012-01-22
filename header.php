@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  */
- 
+
 ?><!DOCTYPE html>
 <!--[if IE ]>    <html <?php language_attributes(); ?> class="ie"> <![endif]-->
  <!--[if !(IE)]><!-->  <html <?php language_attributes(); ?>>  <!--<![endif]-->
@@ -13,8 +13,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-
  <script type="text/javascript">
       WebFontConfig = {
        custom: { families: ['OFLSortsMillGoudyRegular', 'OFLSortsMillGoudyItalic'],
@@ -31,7 +29,8 @@
         s.parentNode.insertBefore(wf, s);
       })();
     </script>
-<noscript><link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/noscript.css" /></noscript>  
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<noscript><link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/noscript.css" /></noscript>
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.

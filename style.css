@@ -543,9 +543,33 @@ input#searchsubmit:hover {
     box-shadow: 1px 4px 20px #dddddd;
 }
 
-#footer p.credits {
+#footer .credits {
     margin: 0 80px;
     font-size: .8em;
+}
+
+#subscribe-form {
+    text-align: center;
+    font-size: 0.8em;
+}
+
+#subscribe-form input {
+    background-color: #EEE;
+    border: 1px solid #666;
+    padding: 1px;
+}
+
+#subscribe-form input.default {
+    color: #666;
+}
+
+#subscribe-form input[type=submit] {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 0.93em;
+}
+#subscribe-form input:hover {
+    background-color: #DDD;
 }
 
 span.older-posts a, span.newer-posts a{

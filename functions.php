@@ -2,7 +2,7 @@
 /**
  * Based on TwentyTen functions and definitions
  **/
- 
+
 //include 'plugins/drop-caps/wp_drop_caps.php';
 if (!function_exists('arl_kottke_archives')) {
 include 'plugins/arl_kottke_archives.php';
@@ -261,22 +261,20 @@ function theme_shortcode_dropcaps($atts, $content = null, $code) {
 }
 add_shortcode('dropcap', 'theme_shortcode_dropcaps');
 
+if (function_exists('register_sidebar')) { register_sidebar(); }
 
 //build out our Portfolio Theme options
 
-add_option("melville_theme_footer", 'show'); 
+add_option("melville_theme_footer", 'show');
 
-$melville_footer = get_option('melville_theme_footer'); 
+$melville_footer = get_option('melville_theme_footer');
 define('melville_footer',$melville_footer);
 
 $max_contents_parts = 5;
-$NUMBERS = array("Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten");
-foreach ($NUMBERS as $i => $n) {
-  define("NUMBERS_$i", $n);
-}
+add_option("next_chapter_link_text","Next Chapter");
 define('max_contents_parts', $max_contents_parts);
 for ($i=1; $i <= $max_contents_parts; $i++) {
-  add_option("contents_part_${i}_start", '');
+  add_option("contents_part_${i}_count", '');
   add_option("contents_part_${i}_title", '');
 }
 
@@ -307,22 +305,49 @@ function melville_theme_options_page() { ?>
 </select>
 </td>
 </tr>
+</table>
+
+<h4>Next chapter link</h4>
+<table style="width:100%">
+  <tr>
+   <td style="width:170px"><label for='next_chapter_link_text'>Text of next chapter link:<sup>[1]</sup> </label></td>
+   <td><input type="text" style="width:100%" name='next_chapter_link_text' value='<?php echo get_option("next_chapter_link_text"); ?>'/></td>
+  </tr>
+</table>
+
+<h4>Contents Page Parts</h4>
+<table style="width:100%">
+<?php
+$input_style = "width:100%";
+$label_style = "width:120px;text-align:right;";
+
+for ($i=1; $i <= max_contents_parts; $i++) :?>
 
 <tr>
-<td><b>Contents Page Parts</b></td><td>Starting Post # <small>(Empty/non-integers are ignored)</small></td><td>Title</td>
-</tr>
-<?php for ($i=1; $i <= max_contents_parts; $i++) : ?>
-<tr>
-   <th scope="row">Part <?php echo $i;?></th>
-   <td><input type="number" <?php echo "name='contents_part_${i}_start' value='".get_option("contents_part_${i}_start")."'";?> /></td>
-															       <td><input type="text" <?php echo "name='contents_part_${i}_title' value='".get_option("contents_part_${i}_title")."'"; ?> /></td>
+   <td style="width: 50px;"><b>Part <?php echo $i;?> </b> </td>
+   <td>
+   <table style="width:100%">
+     <tr>
+       <td style="<?php echo $label_style; ?>"><label for="contents_part_<?php echo $i; ?>_count">Number of posts: </label></td>
+       <td><input type="number" <?php echo "name='contents_part_${i}_count' value='".get_option("contents_part_${i}_count")."'";?> /></td>
+     </tr>
+     <tr>
+																	 <td style="<?php echo $label_style; ?>"><label for='contents_part_<?php echo $i; ?>_title'>Title:<sup>[1]</sup> </label></td>
+       <td><input type="text" style="<?php echo $input_style;?>" <?php echo "name='contents_part_${i}_title' value='".get_option("contents_part_${i}_title")."'"; ?> /></td>
+     </tr>
+   </table>
+</td>
 </tr>
 <?php endfor; ?>
 
 </table>
 
-    <input type="hidden" name="page_options" value="melville_theme_footer,<?php for ($i=1; $i <= max_contents_parts; $i++) {echo "contents_part_${i}_start,contents_part_${i}_title"; if ($i != max_contents_parts) {echo ',';}}?>" />
-<input type="hidden" name="action" value="update" />	
+<br/>
+<small><sup>[1]</sup> Multilingual text is supported. Prefix the text for each language by its two letter <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> code, e.g. <code>[:en]English [:fr]Français [:de]Deutsch</code>
+</small>
+
+    <input type="hidden" name="page_options" value="melville_theme_footer,next_chapter_link_text,<?php for ($i=1; $i <= max_contents_parts; $i++) {echo "contents_part_${i}_count,contents_part_${i}_title"; if ($i != max_contents_parts) {echo ',';}}?>" />
+<input type="hidden" name="action" value="update" />
 <p class="submit">
 <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 </p>

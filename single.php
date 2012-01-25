@@ -11,9 +11,16 @@ get_header(); ?>
 <?php the_content(); ?>
 <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
 
-<p class="next-chapter"><?php next_post_link('%link','Next chapter &rarr;',TRUE); ?></p>
 
-<?php edit_post_link('Edit', '<p>', '</p>'); ?>
+<?php
+$next = get_next_post(TRUE);
+if (qtrans_isAvailableIn($next->ID,qtrans_getLanguage())):
+?>
+<p class="next-chapter"><?php next_post_link('%link',__(get_option("next_chapter_link_text")).' &rarr;',TRUE); ?></p>
+<?php
+endif;
+
+ edit_post_link('Edit', '<p>', '</p>'); ?>
 </div>
 <?php endwhile; // end of the loop. ?>
 

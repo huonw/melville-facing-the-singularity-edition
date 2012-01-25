@@ -29,6 +29,21 @@
         s.parentNode.insertBefore(wf, s);
       })();
     </script>
+<style type='text/css'>
+#lang-select ul li { display: none; }
+<?php
+ global $q_config;
+
+$langs = array();
+  foreach ($q_config['enabled_languages'] as $lang) {
+  if (qtrans_isAvailableIn($post->ID, $lang))
+    $langs[] = "#lang-select li.lang-$lang";
+}
+echo implode(", ",$langs);
+if ($langs)
+  echo '{ display: inline-block;}';
+?>
+</style>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <noscript><link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/noscript.css" /></noscript>
 <title><?php
@@ -45,7 +60,7 @@
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
+	  echo ' | ' . __($site_description);
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
@@ -61,6 +76,9 @@
 <body <?php body_class(); ?>>
 <?php get_sidebar();
 ?>
+
+<div id="lang-select"><?php qtrans_generateLanguageSelectCode("text","lang-select"); ?></div>
+
 <div id="wrapper">
 	<div id="header">
 	    <div>

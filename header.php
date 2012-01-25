@@ -59,6 +59,8 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php get_sidebar();
+?>
 <div id="wrapper">
 	<div id="header">
 	    <div>

@@ -57,20 +57,22 @@ body {
     text-shadow: #fff 0 0 1px;
 }
 
-div#wrapper {
+#wrapper {
     width: 810px;
-    background-color: #ffffff;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin: 0 auto -110px;
+    overflow: hidden;
+    background-color: #ffffff;
     border-right: 1px solid #cccccc;
     border-left: 1px solid #cccccc;
     -moz-box-shadow: 1px 0 20px #dddddd;
     -webkit-box-shadow: 1px 0 20px #dddddd;
     -box-shadow: 1px 0 20px #dddddd;
-    overflow: hidden;
+
 }
+
 
 h1, h2, h3, h4, h5, h6 { 		font-weight:normal; 		margin: 15px 0;
     clear: both;
@@ -226,7 +228,7 @@ span.dropcap{
     text-decoration: none;
 }
 
-div#content {
+#content {
     margin: 0 80px 50px 80px;
     text-align: justify;
 
@@ -236,12 +238,12 @@ div#content {
     hyphens: auto;
 }
 
-#content div.post p.next-chapter {
+#content .post .next-chapter {
     text-align:right;
     margin: 0px;
 }
 
-#content div.post p.date, #content div.post p.post-meta {
+#content .post .date, #content .post .post-meta {
     display: none; /* Don't show the date or the category (etc) data */
 
     margin: 30px 0 0 0;
@@ -249,11 +251,11 @@ div#content {
     background: url(images/post-sep.png) no-repeat center bottom;
 }
 
-#content div.post p.post-meta {
+#content .post .post-meta {
     margin: 0 0;
 }
 
-.single #content div.post p.date {
+.single #content .post .date {
     font-size: 1em;
     margin: 40px 0 5px 0;
     padding: 0;
@@ -328,7 +330,7 @@ br.clear { clear:both; display:block; height:1px; margin:-1px 0 0 0 } /* Use thi
 
 /* @group Header */
 
-div#header {
+#header {
     margin: 20px 0 30px 0;
     text-align:center;
     color: #777777;
@@ -345,12 +347,12 @@ div#header {
     color: #555555;
 }
 
-img#header-image {
+#header-image {
     width: 800px;
     height: 314px;
 }
 
-img#header-dinkus {
+#header-dinkus {
     width: 805px;
     height: 106px;
 }

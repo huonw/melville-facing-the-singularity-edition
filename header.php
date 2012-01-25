@@ -64,8 +64,8 @@
 <div id="wrapper">
 	<div id="header">
 	    <div>
-	       <a href="/">
-	          <img id="header-image" src="<?php bloginfo('stylesheet_directory') ?>/images/header.png" />
+	       <a href="<?php echo bloginfo('url');?>">
+	          <img id="header-image" src="<?php bloginfo('stylesheet_directory') ?>/images/header.png" width="800" height="314"/>
                </a>
             </div>
 		<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
@@ -74,7 +74,7 @@
 				</<?php echo $heading_tag; ?>>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
 
-		<img id="header-dinkus" src="<?php bloginfo('stylesheet_directory') ?>/images/dinkus.png" />
+		<img id="header-dinkus" src="<?php bloginfo('stylesheet_directory') ?>/images/dinkus.png" width="805" height="106" />
 	</div><!--#header-->
 
 <div id="content">

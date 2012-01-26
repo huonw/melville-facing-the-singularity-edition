@@ -65,13 +65,10 @@ body {
     margin: 0 auto -110px;
     overflow: hidden;
     background-color: #ffffff;
-    border-right: 1px solid #cccccc;
-    border-left: 1px solid #cccccc;
-    border-top: 1px solid #cccccc;
+    border: 1px solid #cccccc;
     -moz-box-shadow: 1px 0 20px #dddddd;
     -webkit-box-shadow: 1px 0 20px #dddddd;
-    -box-shadow: 1px 0 20px #dddddd;
-
+    box-shadow: 1px 0 20px #dddddd;
 }
 
 
@@ -178,7 +175,7 @@ span.dropcap{
 }
 
 #content li {
-    margin: 0 0 0 20px;
+    margin: 0 0 2px 20px;
 }
 
 #content dt,
@@ -333,7 +330,7 @@ br.clear { clear:both; display:block; height:1px; margin:-1px 0 0 0 } /* Use thi
 
 #lang-select {
     text-align: right;
-    padding: 2px 0px;
+    padding: 2px 5px;
     font-size: 1em;
     line-height: normal;
     width: 800px;
@@ -357,12 +354,13 @@ br.clear { clear:both; display:block; height:1px; margin:-1px 0 0 0 } /* Use thi
 }
 
 #site-title {
-    margin: 40px 0 20px 0;
+    margin: 20px 0 20px 0;
 }
 
 #site-title a {
     font-family: 'OFLSortsMillGoudyItalic', Georgia, sans;
     font-size: 60px;
+    line-height: 60px;
     text-decoration: none;
     color: #555555;
 }
@@ -524,7 +522,7 @@ input#searchsubmit:hover {
     text-align: center;
 }
 #menu .menu li, #menu .menu-footer li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 #menu .menu li a, #menu .menu-footer li a {
@@ -552,14 +550,11 @@ input#searchsubmit:hover {
 }
 
 #footer {
-    height: 40px;
+    min-height: 37px;
     clear: both;
-}
-
-#footer {
     width: 810px;
     margin: 0 auto;
-    padding: 20px 0 0 0;
+    padding: 20px 0 3px 0;
     background-color: #fafafa;
     border-top: 1px solid #dddddd;
     border-right: 1px solid #cccccc;
@@ -577,6 +572,11 @@ input#searchsubmit:hover {
 #subscribe-form {
     text-align: center;
     font-size: 0.8em;
+}
+
+.subscribe-form-block {
+    display: inline-block;
+    margin: 0 3px;
 }
 
 #subscribe-form input {
@@ -604,3 +604,77 @@ span.older-posts a, span.newer-posts a{
 }
 
 /* @end */
+
+/* @group mobile  */
+
+@media only screen and (max-width: 823px), only screen and (max-device-width: 823px) {
+
+
+    #wrapper, #menu, #lang-select, #footer {
+        width: auto;
+        border-left: none;
+        border-right: none;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+
+    #header {
+        margin-bottom: 15px;
+    }
+
+    #header img {
+        max-width: 100%;
+        height: auto\9; /* ie8 */
+        height: auto;
+    }
+
+    #site-title {
+        margin: 20px 0 0px 0;
+    }
+
+    #content {
+        margin: 0 40px 25px;
+    }
+    #menu .menu li, #menu .menu-footer li {
+        margin: 0 10px;
+    }
+    #content h1.entry-title, #content h1.page-title, #content h2.entry-title {
+        margin: 0 0 15px;
+    }
+
+    #content img.size-full {
+        float: none;
+        display: block;
+        margin: 5px auto;
+        max-width: 100%;
+        height: auto\9; /* ie8 */
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
+    #site-title a {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    #content {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    blockquote {
+        padding-left: 15px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #content {
+        font-size: 0.9em;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* @end */
+

@@ -27,8 +27,12 @@
     <div id="subscribe-form">
     <form action="http://singularityinstitute.createsend.com/t/y/s/trvi/" method="post" id="subForm">
 <div>
-<label for="trvi-trvi">Subscribe for updates on Singularity-related research: </label><input type="text" name="cm-trvi-trvi" id="trvi-trvi" class="default" value="Email" />
-<input type="submit" value="Subscribe" />
+<label for="trvi-trvi" class="subscribe-form-block">Subscribe for updates on Singularity-related research: </label>
+
+<div class='subscribe-form-block'>
+    <input type="text" name="cm-trvi-trvi" id="trvi-trvi" class="default" value="Email" />
+    <input type="submit" value="Subscribe" />
+</div>
 </div>
 </form>
     </div>

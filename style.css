@@ -12,18 +12,6 @@
    Melville is based on TwentyTen, the default WordPress theme
    */
 
-/* @group Google Font Loader */
-
-#site-title a, #content h1.entry-title, #content h1.page-title, #content h2.entry-title, span.cap {
-    visibility: hidden;
-}
-
-.wf-active #site-title a, .wf-active #site-title a, .wf-active #content h1.entry-title, .wf-active #content h1.page-title, .wf-active #content h2.entry-title, .wf-active span.cap, .wf-inactive #site-title a, .wf-inactive #site-title a, .wf-inactive #content h1.entry-title, .wf-inactive #content h1.page-title, .wf-inactive #content h2.entry-title, .wf-inactive span.cap {
-    visibility: visible;
-}
-
-/* @end */
-
 /* @group Reset */
 
 /* Based upon 'reset.css' in the Yahoo! User Interface Library: http://developer.yahoo.com/yui */
@@ -362,6 +350,7 @@ br.clear { clear:both; display:block; height:1px; margin:-1px 0 0 0 } /* Use thi
 #site-title-a {
     font-family: 'OFLSortsMillGoudyItalic', Georgia, serif;
     font-size: 60px;
+    font-style: italic;
     line-height: 60px;
     text-decoration: none;
     color: #555555;

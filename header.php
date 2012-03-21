@@ -13,22 +13,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
- <script type="text/javascript">
-      WebFontConfig = {
-       custom: { families: ['OFLSortsMillGoudyRegular', 'OFLSortsMillGoudyItalic'],
-    urls: [ '<?php echo get_template_directory_uri(); ?>/fonts/OFL-Sorts-Mill-Goudy/ofl-normal.css',
-      '<?php echo get_template_directory_uri(); ?>/fonts/OFL-Sorts-Mill-Goudy/ofl-italic.css' ] }
-      };
-      (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-      })();
-    </script>
 <style type='text/css'>
 #lang-select ul li { display: none; }
 <?php
@@ -44,6 +28,8 @@ if ($langs)
   echo '{ display: inline-block;}';
 ?>
 </style>
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/fonts/OFL-Sorts-Mill-Goudy/ofl-normal.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/fonts/OFL-Sorts-Mill-Goudy/ofl-italic.css" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <noscript><link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/noscript.css" /></noscript>
 <title><?php

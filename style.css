@@ -358,7 +358,7 @@ br.clear { clear:both; display:block; height:1px; margin:-1px 0 0 0 } /* Use thi
 }
 
 #site-title a {
-    font-family: 'OFLSortsMillGoudyItalic', Georgia, sans;
+    font-family: 'OFLSortsMillGoudyItalic', Georgia, serif;
     font-size: 60px;
     line-height: 60px;
     text-decoration: none;

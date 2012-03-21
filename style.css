@@ -72,7 +72,9 @@ body {
 }
 
 
-h1, h2, h3, h4, h5, h6 { 		font-weight:normal; 		margin: 15px 0;
+h1, h2, h3, h4, h5, h6 {
+    font-weight:normal;
+    margin: 15px 0;
     clear: both;
 }
 
@@ -139,7 +141,7 @@ hr {
     width: 100%;
 }
 
-#content tr th, #content thead th {
+#content th {
     color: #888;
     font-size: 12px;
     font-weight: bold;
@@ -147,7 +149,7 @@ hr {
     padding: 9px 24px;
 }
 
-#content tr td {
+#content td {
     border-top: 1px solid #e7e7e7;
     padding: 6px 24px;
 }
@@ -156,11 +158,11 @@ hr {
     background: #fafafa;
 }
 
-#content div.post {
+#content .post {
     margin: 0 0 0 0;
 }
 
-span.dropcap{
+.dropcap{
     font-weight:bold;
     font-family: 'OFLSortsMillGoudyRegular', Georgia, serif;
     float:left;
@@ -281,18 +283,18 @@ label.screen-reader-text {
     text-decoration: none;
 }
 
-#content div.post p.date, p.post-meta {
+#content div.post .date, .post-meta {
     font-size: .8em;
     clear: both;
 }
 
-a#cancel-comment-reply-link {
+#cancel-comment-reply-link {
     font-family: 'helvetica neue',helvetica, arial,sans-serif;
     font-size: 11px;
     margin: 0 10px;
 }
 
-p.wp-caption-text {
+.wp-caption-text {
     font-size: 11px;
     margin: 0 0 20px 20px;
 }
@@ -357,7 +359,7 @@ br.clear { clear:both; display:block; height:1px; margin:-1px 0 0 0 } /* Use thi
     margin: 20px 0 20px 0;
 }
 
-#site-title a {
+#site-title-a {
     font-family: 'OFLSortsMillGoudyItalic', Georgia, serif;
     font-size: 60px;
     line-height: 60px;
@@ -585,7 +587,7 @@ input#searchsubmit:hover {
     padding: 1px;
 }
 
-#subscribe-form input.default {
+#subscribe-form .default {
     color: #666;
 }
 
@@ -608,8 +610,6 @@ span.older-posts a, span.newer-posts a{
 /* @group mobile  */
 
 @media only screen and (max-width: 823px), only screen and (max-device-width: 823px) {
-
-
     #wrapper, #menu, #lang-select, #footer {
         width: auto;
         border-left: none;
